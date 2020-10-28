@@ -6,12 +6,30 @@ import static org.junit.Assert.*;
 public class Problem3Test {
     @Test
     public void catchTheBugInBook() {
-        // quiz
+        BookFiction b = new BookFiction("t1", "au1", "g1");
+        BookFiction b_other = new BookFiction(b);
+        //should pass this as we havent changed title, author
+        assertTrue(b.equals(b_other));
+        b_other.setAuthor("au2");
+        b_other.setTitle("t2");
+        //should fail this as we havent implemented the fix yet
+        assertTrue(b.equals(b_other));
+        //ids are different, should return false.
+        assertFalse(b.equals(new BookFiction("t1","au1","g1")));
     }
 
     @Test
     public void catchTheBugInMovie() {
-        // quiz
+        MovieAction m = new MovieAction("pg13", "jason bourne");
+        MovieAction m_other = new MovieAction(m);
+        //should pass this as we havent changed rating, title
+        assertTrue(m.equals(m_other));
+        m_other.setRating("au2");
+        m_other.setTitle("t2");
+        //should fail this as we havent implemented the fix yet
+        assertTrue(m.equals(m_other));
+        //ids are different, should return false.
+        assertFalse(m.equals(new MovieAction("pg13", "jason bourne")));
     }
 
     // DO NOT REMOVE OR CHANGE ANYTHING BELOW THIS!
