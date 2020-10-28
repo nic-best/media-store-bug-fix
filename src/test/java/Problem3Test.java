@@ -14,6 +14,8 @@ public class Problem3Test {
         b_other.setTitle("t2");
         //should fail this as we havent implemented the fix yet
         assertTrue(b.equals(b_other));
+        //ids are different, should return false.
+        assertFalse(b.equals(new BookFiction("t1","au1","g1")));
     }
 
     @Test
@@ -26,6 +28,8 @@ public class Problem3Test {
         m_other.setTitle("t2");
         //should fail this as we havent implemented the fix yet
         assertTrue(m.equals(m_other));
+        //ids are different, should return false.
+        assertFalse(m.equals(new MovieAction("pg13", "jason bourne")));
     }
 
     // DO NOT REMOVE OR CHANGE ANYTHING BELOW THIS!
