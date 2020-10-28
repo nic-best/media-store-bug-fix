@@ -19,6 +19,18 @@ public abstract class Book implements StoreMediaOperations {
         this.author = anotherBook.author;
     }
 
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == this) {
