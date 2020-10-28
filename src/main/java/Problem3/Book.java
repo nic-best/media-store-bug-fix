@@ -44,16 +44,7 @@ public abstract class Book implements StoreMediaOperations {
         Book theOtherBook = (Book) obj;
 
 
-        // bug is here
-        // Quiz: add unit tests to catch this bug.
-        // The bug is caught when
-        //  1. newly add tests fail while all old tests still pass
-        //  2. remove the bug and use the fix below, all tests pass
-        return id.equals(theOtherBook.id) &&
-                author.equals(theOtherBook.author) &&
-                title.equals(theOtherBook.title);
 
-        // fix is here
-        // return id.equals(theOtherBook.id);
+        return id.equals(theOtherBook.id);
     }
 }
